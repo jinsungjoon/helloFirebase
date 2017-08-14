@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>NWTNS 로그인</title>
+<link rel="stylesheet" type="text/css" href="../res/css/nwtns.css">
+<link rel="stylesheet" type="text/css" href="../res/css/login.css">
+<script src="../res/js/jquery.min.js"></script>
+<script src="../res/js/common.js"></script>
+<script type="text/javascript" src="../res/js/def_variable.js"></script>
+<script type="text/javascript" src="../res/js/def_date.js"></script>
+<script type="text/javascript" src="../res/js/def_string.js"></script>
+<script type="text/javascript" src="../res/js/def_private.js"></script>
+<script type="text/javascript" src="../res/js/android.js"></script>
+<script src="../res/js/protocol.js"></script>
+<script src="js/login.js"></script>
+<!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script defer src="/__/firebase/4.2.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.2.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.2.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+</head>
+<body>
+	<div class='wrap'>
+		<header class="header">
+			<div class='logo'>
+			</div>
+		</header>
+		<div class="content">
+			
+			<div class="leftMain">
+				<ul>
+					<li>
+						<input type="text" placeholder="아이디" id='userId' name='userId' autocomplete="off">
+					</li>
+					<li>
+						<input type="password" placeholder="패스워드" id='userPass' name='userPass' autocomplete="off">
+					</li>
+					<li style="padding-top:10px;">
+						<button id="userBtn" onclick="$.fn.loginProc()">
+							로그인
+						</button>
+					</li>
+					<li class='liGroupBtn'>
+						<button class='groupBtn' id="auth" >
+						인증되지 않음
+						</button>
+						
+						<button class='groupBtn' id="googleLogin" >
+						구글인증
+						</button>
+						<button class='groupBtn' id="logout" >
+						로그아웃
+						</button>
+					</li>
+					<li id="">
+						<span id="DB_MESSAGE"></span>
+						<input type="text" id="INPUT_MESSAGE">
+						<label for="INPUT_MESSAGE">변경할 메세지</label>
+						<button id="BTN_UPDATE" type="button">변경하기</button>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="rightMain">
+			<ol id="SITE_ON_USERS"></ol>
+			</div>
+		</div>
+		<div class="footer">
+			<p>주소 : 서울특별시 구로구 디지털로 273 에이스트윈타워2차 1302호 (주)나우티앤에스 </p>
+			<p>TEL : 02-865-6600 FAX : 02-865-4455</p>
+			<p>Copyright (c) 2015. Nawoo Technology & Service Co,.Ltd. All Rights Reserved.</p>
+			<p id='version' style="justify-content: center;"></p>
+		</div>
+	</div>
+	<script>
+	var config = {
+	    apiKey: "AIzaSyDXEWECCD3LmGpyR4ZpLtCUHoVkpUy5As0",
+	    authDomain: "hellofirebase-41c0b.firebaseapp.com",
+	    databaseURL: "https://hellofirebase-41c0b.firebaseio.com",
+	    projectId: "hellofirebase-41c0b",
+	    storageBucket: "hellofirebase-41c0b.appspot.com",
+	    messagingSenderId: "68999991029"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+</body>
+</html>
